@@ -9,11 +9,14 @@
 
 package org.yhx.learning.jackson.entity;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 /**
  * 〈一句话功能简述〉<br>
  * 〈功能详细描述〉
  *
  */
+//@JsonFormat(shape = JsonFormat.Shape.OBJECT) enum2Object测试案例使用该行代码
 public enum Distance {
     KILOMETER("km", 1000),
     MILE("miles", 1609.34),
@@ -30,5 +33,16 @@ public enum Distance {
         this.meters = meters;
     }
 
-    // standard getters and setters
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    @JsonValue
+    public double getMeters() {
+        return meters;
+    }
 }

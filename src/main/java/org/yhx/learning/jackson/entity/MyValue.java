@@ -12,4 +12,12 @@ public class MyValue {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("MyValue{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", age=").append(age);
+        sb.append('}');
+        return sb.toString();
+    }
 }

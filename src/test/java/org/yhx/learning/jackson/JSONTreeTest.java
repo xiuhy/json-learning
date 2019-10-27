@@ -64,8 +64,4 @@ public class JSONTreeTest extends BaseTest {
         //查询不存在节点直接返回null
         Assert.assertNull(jsonNode.get("f3"));
     }
-
-
-
-
 }

@@ -25,10 +25,13 @@ public class CustomerDeSerializerTest extends BaseTest {
     public void nestTest() throws Exception {
         String json = "{\"car\":{ \"brand2\" : \"Ford\", \"doors1\" : 6 },\"name\":\"test\"}";
 
-        SimpleModule module = new SimpleModule();
-        CarDeserializer carDeserializer = new CarDeserializer(Car.class);
-        module.addDeserializer(Car.class, carDeserializer);
-        this.objectMapper.registerModule(module);
+        //#region manual add serializer/deserializer
+//        SimpleModule module = new SimpleModule();
+//        CarDeserializer carDeserializer = new CarDeserializer(Car.class);
+//        module.addDeserializer(Car.class, carDeserializer);
+//        this.objectMapper.registerModule(module);
+        //#endregion
+
         NestObj car = this.objectMapper.readValue(json, NestObj.class);
         System.out.println(car);
     }
